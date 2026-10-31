@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = { themeColor: "#073D4B", width: "device-width", initialScale: 1 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "PEZVO", url: site.url, logo: `${site.url}/brand/pezvo-logo.png`, slogan: site.promise };
+  const organization = { "@context": "https://schema.org", "@type": "Organization", name: "PEZVO", url: site.url, logo: `${site.url}/brand/pezvo-logo-droplet.png`, slogan: site.promise };
   return <html lang="en-IN"><body>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, "\\u003c") }} />
     <a className="skip-link" href="#main">Skip to content</a>

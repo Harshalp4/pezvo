@@ -62,6 +62,6 @@ export default function CinematicHero() {
       <button aria-label={paused?"Resume hero motion":"Pause hero motion"} onClick={()=>{setPaused(!paused);if(paused){setFocused(false);setHover(false);}}}>{paused?<Play size={15}/>:<Pause size={15}/>}</button>
       <button aria-label="Next scene" onClick={()=>choose(active+1)}><ArrowRight size={17}/></button>
     </div></div>
-    <div className="pz-hero-progress">{HERO_SCENES.map((item,i)=><button key={item.label} className={i===active?"is-active":""} aria-label={`Show scene ${i+1}: ${item.label}`} aria-current={i===active?"true":undefined} onClick={()=>choose(i)}><span className="pz-track"><span style={{width:i===active?`${progress}%`:i<active?"100%":"0%"}}/></span><span className="pz-scene-index">0{i+1}</span><span>{item.label}</span></button>)}</div>
+    <div className="pz-hero-progress" style={{gridTemplateColumns:`repeat(${HERO_SCENES.length}, minmax(0, 1fr))`}}>{HERO_SCENES.map((item,i)=><button key={item.label} className={i===active?"is-active":""} aria-label={`Show scene ${i+1}: ${item.label}`} aria-current={i===active?"true":undefined} onClick={()=>choose(i)}><span className="pz-track"><span style={{width:i===active?`${progress}%`:i<active?"100%":"0%"}}/></span><span className="pz-scene-index">0{i+1}</span><span>{item.label}</span></button>)}</div>
   </section>;
 }

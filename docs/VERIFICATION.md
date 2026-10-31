@@ -36,3 +36,12 @@ Not claimed: production booking/payment/account integration, real-device perform
 - Scene 2 remains a real playing video: readyState 4, paused false, and media time advancing after manual selection and across viewport changes. Playback/rotation pause logic was preserved.
 - Production build, typecheck, all five existing mocked test suites, and the production smoke check (20 routes, 16 assets/SEO resources) passed.
 - Screenshot evidence: `screenshots/pezvo-full-background-desktop.jpg` and `screenshots/pezvo-full-background-mobile.jpg`.
+
+## Shoe-care hero and supplied gold-droplet logo
+
+- Added a shoe-cleaning film as scene 3; the carousel now has five scenes. All share the same full-background layout. The progress grid follows the scene count, with at least 44px touch targets at the checked 320px width.
+- The supplied PNG is preserved byte for byte. Its lossless WebP is used in the header and footer; the social preview and organization metadata use the new logo too. Responsive image sizes select a small logo resource instead of downloading the full artwork for navigation.
+- Complete shoe-video decode passed: 10 seconds, 1440×810, H.264/yuv420p, 25 fps, silent, 1,112,298 bytes. The `moov` metadata precedes `mdat` for progressive playback.
+- Browser checks at 1440×900, 390×844 and 320×740 found no horizontal overflow. The film reported readyState 4 and paused false; playback advanced from 3.43s to 7.20s, continued across viewport changes and looped. Five scene controls remained available. The shoe-care CTA opened the Shoe Cleaning service filter.
+- Production build and all five existing mocked suites passed. Production smoke checks passed for 20 routes and 18 media/SEO resources, including the new logo, film and poster.
+- Production preview screenshots: `screenshots/pezvo-shoe-care-desktop.jpg` and `screenshots/pezvo-shoe-care-mobile.jpg`.

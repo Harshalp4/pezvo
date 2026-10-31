@@ -18,7 +18,7 @@ export default function Header() {
     document.addEventListener("keydown", key); return () => document.removeEventListener("keydown", key);
   }, [expanded]);
   return <header className="pz-header"><div className="pz-header-inner">
-    <Link href="/" aria-label="PEZVO home" className="pz-logo"><Image src="/brand/pezvo-logo.webp" alt="PEZVO — Freshness, Delivered." width={900} height={352} priority /></Link>
+    <Link href="/" aria-label="PEZVO home" className="pz-logo"><Image src="/brand/pezvo-logo-droplet.webp" alt="PEZVO — Freshness, Delivered." width={2022} height={778} sizes="(max-width: 640px) 137px, (max-width: 1100px) 155px, 178px" priority /></Link>
     <nav aria-label="Main navigation" className="pz-desktop-nav">{NAV_LINKS.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}</nav>
     <button className="pz-button pz-header-book" onClick={() => open({ source: "header" })}>Book a pickup <ArrowUpRight size={17} /></button>
     <button ref={trigger} className="pz-menu-toggle" aria-label={expanded ? "Close menu" : "Open menu"} aria-controls="mobile-menu" aria-expanded={expanded} onClick={() => setExpanded(!expanded)}>{expanded ? <X /> : <Menu />}</button>
