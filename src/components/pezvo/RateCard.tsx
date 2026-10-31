@@ -1,0 +1,11 @@
+"use client";
+import { useMemo, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { rateRows } from "@/lib/api";
+import { useCallbackModal } from "@/components/CallbackProvider";
+import type { Service } from "@/lib/types";
+export default function RateCard({services,initialService}:{services:Service[];initialService?:string}){
+ const [category,setCategory]=useState(services.some(s=>s.name===initialService)?initialService!:"All"),[query,setQuery]=useState("");const {open}=useCallbackModal();
+ const groups=useMemo(()=>services.filter(s=>category==="All"||s.name===category).map(s=>({service:s,rows:rateRows(s).filter(r=>`${r.name} ${s.name}`.toLowerCase().includes(query.toLowerCase().trim()))})).filter(g=>g.rows.length),[services,category,query]);
+ return <><label htmlFor="rate-search" className="sr-only">Search garments and services</label><input id="rate-search" className="pz-rate-search" type="search" placeholder="Find your garment — shirt, saree, blazer…" value={query} onChange={e=>setQuery(e.target.value)}/><div className="pz-filter-row" aria-label="Filter prices by service">{["All",...services.map(s=>s.name)].map(name=><button key={name} aria-pressed={category===name} onClick={()=>setCategory(name)}>{name}</button>)}</div><p className="pz-note" role="status">{groups.reduce((n,g)=>n+g.rows.length,0)} {groups.reduce((n,g)=>n+g.rows.length,0)===1?"item":"items"} shown</p>{groups.map(({service,rows})=><div key={service.id} className="pz-price-table-group"><table className="pz-rate-table"><caption>{service.name}</caption><thead><tr><th scope="col">Garment / item</th><th scope="col">Rate</th><th scope="col"><span className="sr-only">Request pickup</span></th></tr></thead><tbody>{rows.map(row=><tr key={row.name}><th scope="row" className="font-normal">{row.name}</th><td>₹{row.price}<span className="pz-note"> / {/sqft/i.test(row.name)?"sq ft":/seat/i.test(row.name)?"seat":"piece"}</span></td><td><button className="pz-text-link" onClick={()=>open({source:"pricing",service:service.name})} aria-label={`Request ${service.name} pickup for ${row.name}`}>Book pickup <ArrowUpRight size={15}/></button></td></tr>)}</tbody></table></div>)}{groups.length===0&&<div className="pz-preview-note">No matching items. Try a different garment or service.</div>}</>;
+}
