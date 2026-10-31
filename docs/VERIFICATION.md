@@ -54,3 +54,12 @@ Not claimed: production booking/payment/account integration, real-device perform
 - New films decoded completely with FFmpeg. Garment: 12 seconds, 1440×760, 939,211 bytes. Shoe: 8 seconds, 1440×810, 2,260,821 bytes. Both use H.264/yuv420p, 25 fps, no audio and fast-start metadata.
 - Production build and five existing mocked suites passed. Updated production smoke checks passed for 20 routes and 18 media/SEO resources. Playback is still limited to the active slide; pause, visibility and reduced-motion behavior is preserved.
 - Screenshot evidence: `screenshots/pezvo-visible-garment-desktop.jpg`, `screenshots/pezvo-visible-garment-mobile.jpg`, `screenshots/pezvo-visible-shoe-desktop.jpg` and `screenshots/pezvo-visible-shoe-mobile.jpg`.
+
+## Visual pricing catalogue — 2026-10-31
+
+- Replaced the text-only table with item photography, names, rates and pickup buttons; all 40 existing rates and the per-piece / square-foot / seat units remain supplied by `rateRows`.
+- Added a PEZVO editorial photo header, visual desktop service selector, mobile service dropdown, search, result count and empty-state recovery. Filters preserve the selected service in the URL; existing service links remain supported.
+- Reused the existing product imagery under `public/pricing/` (provenance in its `CREDITS.md`); no new image generation or external images required. Images illustrate garment types.
+- Browser checks: seven service filters plus All returned 13 / 6 / 1 / 1 / 3 / 2 / 40 after the initial 14-item Dry Clean view. All-service saree search returned nine variants. Empty search recovered via View all services. Shoe pickup opened the existing callback modal with Shoe Cleaning selected; no request was submitted.
+- Checked at 1440, 390 and 320 pixel widths: no horizontal overflow, long names wrap, and mobile item pickup targets are at least 46px high. Specialist services use a larger card; standard categories use a responsive grid.
+- Production build and existing mocked test suites passed. Preview remains on port 3100.
