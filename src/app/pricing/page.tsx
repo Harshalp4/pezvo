@@ -1,3 +1,4 @@
+import BrandDrop from "@/components/pezvo/BrandDrop";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowDown, Check, ShieldCheck } from "lucide-react";
@@ -18,13 +19,13 @@ export default async function Pricing({ searchParams }: { searchParams: Promise<
   return <>
     <section className="pz-price-intro">
       <div className="pz-container pz-price-intro-grid">
-        <div className="pz-price-intro-copy"><p className="pz-eyebrow"><span className="pz-gold" aria-hidden="true">✦</span> THE PEZVO CARE MENU</p><h1>Good care.<br /><em>Beautifully priced.</em></h1><p>From your Monday shirt to your most-loved silk.<br className="pz-price-desktop-break" /> Find the right care, with a clear price for every piece.</p><a href="#care-catalogue" className="pz-text-link">Explore the collection <ArrowDown size={17} aria-hidden="true" /></a></div>
+        <div className="pz-price-intro-copy"><p className="pz-eyebrow"><span className="pz-gold" aria-hidden="true"><BrandDrop /></span> THE PEZVO CARE MENU</p><h1>Good care.<br /><em>Beautifully priced.</em></h1><p>From your Monday shirt to your most-loved silk.<br className="pz-price-desktop-break" /> Find the right care, with a clear price for every piece.</p><a href="#care-catalogue" className="pz-text-link">Explore the collection <ArrowDown size={17} aria-hidden="true" /></a></div>
         <div className="pz-price-still-life" aria-hidden="true">
           <div className="pz-price-shirt"><Image src="/pricing/shirt.webp" alt="" fill sizes="(max-width: 640px) 45vw, 260px" priority /><span>THE EVERYDAY</span></div>
           <div className="pz-price-silk"><Image src="/pricing/saree-navvari.webp" alt="" fill sizes="(max-width: 640px) 25vw, 165px" priority /></div>
           <div className="pz-price-shoes"><Image src="/pricing/shoes.webp" alt="" fill sizes="(max-width: 640px) 28vw, 185px" priority /></div>
           <span className="pz-price-still-caption">For everything you love.</span>
-          <span className="pz-price-spark" aria-hidden="true">✦</span>
+          <span className="pz-price-spark" aria-hidden="true"><BrandDrop /></span>
         </div>
       </div>
     </section>

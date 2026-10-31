@@ -63,3 +63,12 @@ Not claimed: production booking/payment/account integration, real-device perform
 - Browser checks: seven service filters plus All returned 13 / 6 / 1 / 1 / 3 / 2 / 40 after the initial 14-item Dry Clean view. All-service saree search returned nine variants. Empty search recovered via View all services. Shoe pickup opened the existing callback modal with Shoe Cleaning selected; no request was submitted.
 - Checked at 1440, 390 and 320 pixel widths: no horizontal overflow, long names wrap, and mobile item pickup targets are at least 46px high. Specialist services use a larger card; standard categories use a responsive grid.
 - Production build and existing mocked test suites passed. Preview remains on port 3100.
+
+## Droplet identity and logo motion — 2026-10-31
+
+- Kept the supplied full-logo PNG/WebP unchanged. The CSS isolation region contains gold pixels only, with no teal lettering; duplicate decorative artwork is hidden from accessibility APIs.
+- Added a single arrival lift/ripple and a hover/keyboard-focus replay. Browser inspection confirmed the arrival animation has one iteration, settles at zero translation, and keyboard focus switches to the replay animation. Reduced-motion CSS disables both the emblem and ripple animations; OS preference emulation was not performed.
+- Replaced old star accents in active page components, the atelier wall sign, delivery bag/uniform and both favicon/Apple icon outputs. All active source references use versioned droplet image paths; old artwork is retained only as unused source history.
+- Production build (including type checks), five existing mocked suites and smoke checks passed: 20 public routes and 18 media/SEO resources. No real enquiry was submitted.
+- Inspected desktop at 1440px and mobile at 390px and 320px. No horizontal overflow; header logo widths are 178px desktop / 137px mobile, footer 200px desktop. Updated atelier/delivery images and footer logo loaded successfully. Keyboard focus remains visible.
+- Screenshots: `screenshots/pezvo-droplet-desktop.jpg` and `screenshots/pezvo-droplet-mobile.jpg`.

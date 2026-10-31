@@ -1,5 +1,6 @@
 "use client";
 
+import BrandDrop from "@/components/pezvo/BrandDrop";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -61,7 +62,7 @@ export default function RateCard({ services, initialService }: { services: Servi
           <ArrowUpRight size={15} aria-hidden="true" />
         </button>
       </nav>
-      <div className="pz-catalogue-help"><span className="pz-gold" aria-hidden="true">✦</span><p>A special piece?<br /><em>Let’s talk about its care.</em></p><Link href="/contact">Ask the PEZVO team <ArrowUpRight size={15} aria-hidden="true" /></Link></div>
+      <div className="pz-catalogue-help"><span className="pz-gold" aria-hidden="true"><BrandDrop /></span><p>A special piece?<br /><em>Let’s talk about its care.</em></p><Link href="/contact">Ask the PEZVO team <ArrowUpRight size={15} aria-hidden="true" /></Link></div>
     </aside>
 
     <div className="pz-catalogue-main">
@@ -94,7 +95,7 @@ export default function RateCard({ services, initialService }: { services: Servi
         </ul>
       </section>)}
       {groups.length === 0 && <div className="pz-catalogue-empty"><Search size={30} strokeWidth={1} aria-hidden="true" /><h2>No pieces found.</h2><p>Try a different name, or explore the complete care collection.</p><button type="button" className="pz-button" onClick={() => chooseService("All")}>View all services <ArrowUpRight size={17} aria-hidden="true" /></button></div>}
-      <div className="pz-catalogue-footnote"><span className="pz-gold" aria-hidden="true">✦</span><p>Every piece is a little different. Final prices are confirmed after inspection, before we begin. Images illustrate garment types.</p></div>
+      <div className="pz-catalogue-footnote"><span className="pz-gold" aria-hidden="true"><BrandDrop /></span><p>Every piece is a little different. Final prices are confirmed after inspection, before we begin. Images illustrate garment types.</p></div>
     </div>
   </div>;
 }

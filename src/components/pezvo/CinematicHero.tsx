@@ -1,4 +1,6 @@
 "use client";
+
+import BrandDrop from "@/components/pezvo/BrandDrop";
 import Image from "next/image";
 import Link from "next/link";
 import { type CSSProperties, useCallback, useEffect, useRef, useState } from "react";
@@ -56,7 +58,7 @@ export default function CinematicHero() {
       <p className="pz-hero-description">{scene.description}</p>
       <div className="pz-hero-actions">{scene.href?<Link className="pz-button pz-button-light" href={scene.href}>{scene.cta}<ArrowUpRight size={18}/></Link>:<Action light source={`hero-${active+1}`}>{scene.cta}</Action>}<a href="#the-pezvo-way" className="pz-hero-secondary">The PEZVO way <ArrowDown size={16}/></a></div>
     </div>
-    <div className="pz-hero-control-row"><p><span className="pz-gold">✦</span> Freshness, Delivered.</p><div className="pz-hero-arrows">
+    <div className="pz-hero-control-row"><p><span className="pz-gold"><BrandDrop /></span> Freshness, Delivered.</p><div className="pz-hero-arrows">
       {blocked&&scene.video&&<button className="pz-play-film" onClick={()=>{video.current?.play().then(()=>setBlocked(false)).catch(()=>setBlocked(true));}}>Play film</button>}
       <button aria-label="Previous scene" onClick={()=>choose(active-1)}><ArrowLeft size={17}/></button>
       <button aria-label={paused?"Resume hero motion":"Pause hero motion"} onClick={()=>{setPaused(!paused);if(paused){setFocused(false);setHover(false);}}}>{paused?<Play size={15}/>:<Pause size={15}/>}</button>
