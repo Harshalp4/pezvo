@@ -7,7 +7,7 @@
 | `public/brand/pezvo-logo.webp` / `.png` | Existing `logo/pezvo-wave-2026-10-31/pezvo-wave-primary.png` | Exact matching raster wordmark, header/footer/social image |
 | `public/brand/pezvo-icon.webp` / `.png` | Existing wave icon | Compact icon, favicon/Apple icon |
 | `public/photos/hero-press.mp4` / `.jpg` | Existing source site; cottonbro studio / Pexels 5901661 | Scene 1, 12-second muted MP4, 1.78 MB, matching poster |
-| `public/media/shirt-steaming-portrait.mp4` / `.webp` | Ron Lach / [Pexels 10558368](https://www.pexels.com/video/a-person-using-a-steamer-on-a-white-t-shirt-10558368/) | Scene 2, 10-second muted portrait steaming video, 1.15 MB, matching poster |
+| `public/media/shirt-steaming-wide.mp4` / `.webp` | Ron Lach / [Pexels 10558374](https://www.pexels.com/video/close-up-shot-of-a-man-steaming-a-white-t-shirt-10558374/) | Scene 2, 12-second muted landscape steaming video, 1.12 MB, matching poster |
 | `public/media/blazer-care.webp` | User image 5 | Dry cleaning |
 | `public/media/doorstep-care.webp` | User image 6 | Scene 3 collection |
 | `public/media/pezvo-delivery.webp` | Built-in imagegen edit of user image 7 | Scene 4, packaging and closing section |
@@ -18,7 +18,7 @@ The supplied “Laundra” webpage was a layout reference, not a deployed asset.
 
 The source video credit is retained in `public/photos/hero-press-source.txt`. Frames at 0/3/6/9 seconds were reviewed; no legacy brand mark is visible. It is illustrative stock footage, not footage of the business’s staff or premises. Final publishing should reconfirm usage rights for supplied reference imagery.
 
-The second film shows a white T-shirt being steamed on a hanger, with the adult operator cropped to their hands and torso. Downloaded 31 October 2026 under the [Pexels license](https://www.pexels.com/license/), which permits website use and editing. Source credit and encoding details are retained in `public/media/shirt-steaming-portrait-source.txt`. The 49 MB original was trimmed to 00:23–00:33 and encoded to 720×1366 H.264, 25 fps, yuv420p with fast-start metadata and no audio. The portrait shot replaces the former extreme close-up (`white-shirt-steaming.*`, retained as an earlier iteration). A separate, unshaded video panel preserves the shirt neckline, hanger and steamer; the text sits on solid PEZVO teal. Mobile layout keeps the video beside the heading and the description/buttons underneath. It is illustrative stock footage, not PEZVO operations. No paid generation was used.
+The second film shows a white T-shirt being steamed on a hanger in a landscape composition. Downloaded 31 October 2026 under the [Pexels license](https://www.pexels.com/license/). Source credit and encoding details are retained in `public/media/shirt-steaming-wide-source.txt`. The clip is trimmed to 00:00.5–00:12.5, mirrored horizontally to place the garment to the right of the copy, and encoded to 1440×760 H.264, 25 fps, yuv420p with fast-start metadata and no audio. Its full-background presentation uses the same overlay, typography, spacing, controls and responsive layout as scene 1. The wider shot retains the hanger, shirt and steaming action. Earlier portrait and close-up clips remain available as source iterations but are no longer used by the hero. The supplied dark blazer asset is a still photograph used in the services section. This is illustrative stock footage, not PEZVO operations. No paid generation was used.
 
 ## Image generation — built-in tool
 

@@ -39,13 +39,13 @@ export default function CinematicHero() {
     }else element.pause();
     return()=>{cancelled=true;element.pause();};
   },[playing,active]);
-  return <section ref={section} className={`pz-hero${scene.layout==="showcase"?" pz-hero--showcase":""}`} aria-roledescription="carousel" aria-label="The PEZVO care experience"
+  return <section ref={section} className="pz-hero" aria-roledescription="carousel" aria-label="The PEZVO care experience"
     onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}
     onFocusCapture={()=>setFocused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setFocused(false);}}
     onTouchStart={e=>{touch.current={x:e.touches[0].clientX,y:e.touches[0].clientY};}}
     onTouchEnd={e=>{if(!touch.current)return;const x=e.changedTouches[0].clientX-touch.current.x,y=e.changedTouches[0].clientY-touch.current.y;if(Math.abs(x)>60&&Math.abs(x)>Math.abs(y))choose(active+(x<0?1:-1));touch.current=null;}}>
-    {HERO_SCENES.map((item,i)=><div key={item.label} className={`pz-hero-scene ${active===i?"is-active":""}${item.layout==="showcase"?" pz-hero-scene--showcase":""}`} aria-hidden={active!==i}>
-      <Image src={item.poster} alt="" fill priority={i===0} sizes={item.layout==="showcase"?"(max-width: 640px) 42vw, (max-width: 1150px) 37vw, 420px":"100vw"} style={{objectPosition:item.position}} />
+    {HERO_SCENES.map((item,i)=><div key={item.label} className={`pz-hero-scene ${active===i?"is-active":""}`} aria-hidden={active!==i}>
+      <Image src={item.poster} alt="" fill priority={i===0} sizes="100vw" style={{objectPosition:item.position}} />
       {i===active&&item.video&&!reduce&&<video ref={video} src={item.video} poster={item.poster} muted playsInline loop preload="auto" aria-hidden="true" style={{objectPosition:item.position}} />}
     </div>)}
     <div className="pz-hero-shade"/>
