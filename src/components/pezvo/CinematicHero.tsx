@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { type CSSProperties, useCallback, useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Pause, Play } from "lucide-react";
 import { HERO_SCENES } from "@/lib/hero-scenes";
 import Action from "./Action";
@@ -44,15 +44,15 @@ export default function CinematicHero() {
     onFocusCapture={()=>setFocused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setFocused(false);}}
     onTouchStart={e=>{touch.current={x:e.touches[0].clientX,y:e.touches[0].clientY};}}
     onTouchEnd={e=>{if(!touch.current)return;const x=e.changedTouches[0].clientX-touch.current.x,y=e.changedTouches[0].clientY-touch.current.y;if(Math.abs(x)>60&&Math.abs(x)>Math.abs(y))choose(active+(x<0?1:-1));touch.current=null;}}>
-    {HERO_SCENES.map((item,i)=><div key={item.label} className={`pz-hero-scene ${active===i?"is-active":""}`} aria-hidden={active!==i}>
-      <Image src={item.poster} alt="" fill priority={i===0} sizes="100vw" style={{objectPosition:item.position}} />
-      {i===active&&item.video&&!reduce&&<video ref={video} src={item.video} poster={item.poster} muted playsInline loop preload="auto" aria-hidden="true" style={{objectPosition:item.position}} />}
+    {HERO_SCENES.map((item,i)=><div key={item.label} className={`pz-hero-scene ${active===i?"is-active":""}`} aria-hidden={active!==i} style={{"--scene-position":item.position,"--scene-mobile-position":item.mobilePosition??item.position,"--scene-offset":item.mediaOffset??"0%","--scene-mask":item.mediaOffset?"linear-gradient(90deg,transparent,#000 20%)":"none"} as CSSProperties}>
+      <Image src={item.poster} alt="" fill priority={i===0} sizes="100vw" />
+      {i===active&&item.video&&!reduce&&<video ref={video} src={item.video} poster={item.poster} muted playsInline loop preload="auto" aria-hidden="true" />}
     </div>)}
     <div className="pz-hero-shade"/>
     <div className="pz-hero-top"><span>PREMIUM LAUNDRY & DRY CLEANING</span><span className="pz-hero-place"><i/> NAVI MUMBAI</span></div>
     <div className="pz-hero-copy" key={active} aria-live={!rotating?"polite":"off"}>
       <p className="pz-eyebrow">{scene.eyebrow}</p>
-      <h1>{scene.headline}<br/><em>{scene.accent}</em></h1>
+      <h1><span>{scene.headline}</span><em>{scene.accent}</em></h1>
       <p className="pz-hero-description">{scene.description}</p>
       <div className="pz-hero-actions">{scene.href?<Link className="pz-button pz-button-light" href={scene.href}>{scene.cta}<ArrowUpRight size={18}/></Link>:<Action light source={`hero-${active+1}`}>{scene.cta}</Action>}<a href="#the-pezvo-way" className="pz-hero-secondary">The PEZVO way <ArrowDown size={16}/></a></div>
     </div>

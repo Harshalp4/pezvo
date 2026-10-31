@@ -45,3 +45,12 @@ Not claimed: production booking/payment/account integration, real-device perform
 - Browser checks at 1440×900, 390×844 and 320×740 found no horizontal overflow. The film reported readyState 4 and paused false; playback advanced from 3.43s to 7.20s, continued across viewport changes and looped. Five scene controls remained available. The shoe-care CTA opened the Shoe Cleaning service filter.
 - Production build and all five existing mocked suites passed. Production smoke checks passed for 20 routes and 18 media/SEO resources, including the new logo, film and poster.
 - Production preview screenshots: `screenshots/pezvo-shoe-care-desktop.jpg` and `screenshots/pezvo-shoe-care-mobile.jpg`.
+
+## Product visibility refinement
+
+- Replaced white-on-white steaming footage with a sage collared shirt against a neutral wall. Replaced the large-hand/black-shoe footage with a brown-leather finishing sequence. Desktop media remains full-bleed, with a soft offset for the shirt to keep its collar and body beside the copy.
+- Reduced the headline scale and copy width; the dark gradient is concentrated behind the left-side text and fades to clear on the product side. The serif accent and PEZVO palette are retained. Mobile uses a wider 4:3 view of the footage above the copy with a feathered lower edge, plus a scene-specific focal position.
+- Checked all five scenes at 320×740 and 768×900: no horizontal overflow or CTA/control overlap; the minimum measured gap was 22px. Also inspected the garment and shoe films at 1440×900 and 390×844. Motion buttons are now 44×44px on mobile as well as desktop. The headline accent uses balanced line breaks to avoid a single trailing word.
+- New films decoded completely with FFmpeg. Garment: 12 seconds, 1440×760, 939,211 bytes. Shoe: 8 seconds, 1440×810, 2,260,821 bytes. Both use H.264/yuv420p, 25 fps, no audio and fast-start metadata.
+- Production build and five existing mocked suites passed. Updated production smoke checks passed for 20 routes and 18 media/SEO resources. Playback is still limited to the active slide; pause, visibility and reduced-motion behavior is preserved.
+- Screenshot evidence: `screenshots/pezvo-visible-garment-desktop.jpg`, `screenshots/pezvo-visible-garment-mobile.jpg`, `screenshots/pezvo-visible-shoe-desktop.jpg` and `screenshots/pezvo-visible-shoe-mobile.jpg`.
