@@ -54,4 +54,6 @@ See `docs/AUDIT.md` and `docs/VERIFICATION.md` for the audit and checks.
 
 ### Bulk and commercial enquiries
 
+On `/contact`, the original contact details and personal-pickup callback panel appear first. The bulk enquiry form sits in a separate section below them, with single-column fields on small phones.
+
 `BusinessEnquiryForm` on `/contact` and `/business` prepares a structured WhatsApp draft to the existing PEZVO number in `src/lib/site.ts`. Visitors validate their details, review them and choose **Continue to WhatsApp**, then send in WhatsApp. This flow does not use the pickup lead endpoint, email delivery or browser storage, and does not report delivery before the customer sends the draft. `/business` selects commercial care and requires an organisation name. Validation and message-preservation checks run with `npm test`.

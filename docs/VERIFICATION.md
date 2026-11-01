@@ -82,3 +82,10 @@ Not claimed: production booking/payment/account integration, real-device perform
 - Inspected layouts at 1440px, 1204px, 390px and 320px. No horizontal overflow in inspected form/review states. Phone inputs use 16px text; the narrow radio targets remain at least 49px tall. Review heading focus is visible below the fixed header.
 - Production build/type checks passed. Existing tests plus the new validation/complete-draft suite passed; local production smoke checks passed for 20 public routes and 18 media/SEO resources.
 - Screenshots: `screenshots/pezvo-commercial-desktop.jpg` and `screenshots/pezvo-commercial-mobile.jpg`.
+
+## Contact layout follow-up — 2026-11-01
+
+- Restored the original contact introduction, phone/WhatsApp/address layout and “One less thing on your list” callback panel. The bulk/commercial form now follows the complete contact section in a separate, centred container, before service coverage.
+- Checked at 1440px, 768px, 390px and 320px: the form follows the contact section at every width, with no horizontal overflow. Phone fields use one column and the section has a 58px gap below the callback panel.
+- Confirmed the restored callback button opens the existing pickup dialog. No request or WhatsApp message was sent.
+- Production build, including type checks, passed. Screenshot: `screenshots/pezvo-contact-stacked-mobile.jpg`.
