@@ -72,3 +72,13 @@ Not claimed: production booking/payment/account integration, real-device perform
 - Production build (including type checks), five existing mocked suites and smoke checks passed: 20 public routes and 18 media/SEO resources. No real enquiry was submitted.
 - Inspected desktop at 1440px and mobile at 390px and 320px. No horizontal overflow; header logo widths are 178px desktop / 137px mobile, footer 200px desktop. Updated atelier/delivery images and footer logo loaded successfully. Keyboard focus remains visible.
 - Screenshots: `screenshots/pezvo-droplet-desktop.jpg` and `screenshots/pezvo-droplet-mobile.jpg`.
+
+## Bulk and commercial enquiries — 2026-11-01
+
+- Added a shared PEZVO-styled enquiry form to Contact and Business. Contact retains direct phone, WhatsApp, location and the existing personal-pickup callback; Business preselects Commercial care.
+- Captures enquiry type, name, Indian mobile number, organisation (required for commercial care), optional email, service, location and requirements/quantity/frequency. Values are preserved when editing the review.
+- Uses the existing PEZVO WhatsApp destination. The form validates and prepares a review; only the customer's Continue to WhatsApp link opens the draft, and the customer must send it there. No inbox/API is configured for this form and it never claims an enquiry was sent. No form values are saved in browser storage.
+- Checked empty-field errors, accessible labels, first-error focus, commercial organisation requirement, +91 phone normalization, review details, editing and encoded punctuation/rupee symbols. Synthetic test data only; no WhatsApp link was opened and no message was sent.
+- Inspected layouts at 1440px, 1204px, 390px and 320px. No horizontal overflow in inspected form/review states. Phone inputs use 16px text; the narrow radio targets remain at least 49px tall. Review heading focus is visible below the fixed header.
+- Production build/type checks passed. Existing tests plus the new validation/complete-draft suite passed; local production smoke checks passed for 20 public routes and 18 media/SEO resources.
+- Screenshots: `screenshots/pezvo-commercial-desktop.jpg` and `screenshots/pezvo-commercial-mobile.jpg`.

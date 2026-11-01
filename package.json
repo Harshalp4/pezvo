@@ -9,7 +9,7 @@
     "start": "next start -p 3100",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test": "node tests/lead-delivery.cjs && node tests/coverage.cjs && node tests/attribution.cjs && node tests/banners.cjs && node tests/festival.cjs"
+    "test": "node tests/lead-delivery.cjs && node tests/coverage.cjs && node tests/attribution.cjs && node tests/banners.cjs && node tests/festival.cjs && node tests/business-enquiry.cjs"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.3",

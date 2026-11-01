@@ -51,3 +51,7 @@ Use the existing Next-compatible deployment pipeline for this project after conf
 Scenes 1 and 2 use real ironing and white-shirt steaming footage. Scenes 3 and 4 use supplied/edited collection and delivery photos. `docs/ASSETS.md` includes source credits, encoding details and two remaining video prompts with integration paths. No paid video generation was started.
 
 See `docs/AUDIT.md` and `docs/VERIFICATION.md` for the audit and checks.
+
+### Bulk and commercial enquiries
+
+`BusinessEnquiryForm` on `/contact` and `/business` prepares a structured WhatsApp draft to the existing PEZVO number in `src/lib/site.ts`. Visitors validate their details, review them and choose **Continue to WhatsApp**, then send in WhatsApp. This flow does not use the pickup lead endpoint, email delivery or browser storage, and does not report delivery before the customer sends the draft. `/business` selects commercial care and requires an organisation name. Validation and message-preservation checks run with `npm test`.
